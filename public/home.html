@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ARTSO - The Image Catalogue</title>
+    <link rel="styleSheet" type="text/css" href="style.css"/>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="topPanel" id="tNav">
+        <div id="container">
+        <ul>
+  	        <li id="logo">
+                <a href="/home" id="homeLink"><img src="svglogo.png" id="pageName"/></a>
+            </li>
+            <li id="search" >
+                <div id="searchWrap">
+                <form action="" method="get">
+                   <input id="searchField" type="search" name="topicsearch" placeholder="Topic Search"/>
+                    <input id="searchButton" type="submit" value=""/>
+                </form>
+                </div>
+            </li>
+            <li class="drop">
+                <a href="#" id="topic" class="dropbtn">Topics</a>
+                <div class="drop-content">
+                    <a href="?topicsearch=All">All</a>
+                    <a href="?topicsearch=Downloaded">Downloaded</a>
+                    <a href="?topicsearch=SVG">SVG</a>
+                    <a href="?topicsearch=PNG">PNG</a>
+                    <a href="?topicsearch=Mixture">Mixture</a>
+                </div>
+            </li>
+            <li>
+                <a id="upload" href="#upload" >Upload</a>
+            </li>
+            <li>
+                <a id="logout" href="#logout" >Logout</a>
+            </li>
+            <li id="menu">
+                <a href="#" class="icon">&#9776;</a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    <div id="uploadform" class="popup">
+        <button class="close" type="button">X</button>
+        <form action="" method="post" enctype="multipart/form-data" >
+	    <h2 class="popuptitle">Upload Image</h2>
+            <label class="poplabel">Topic:</label>
+            <select class="popinput" name="topics" required="required">
+                <option value="downloaded">Downloaded</option>
+                <option value="svg">SVG</option>
+                <option value="png">PNG</option>
+                <option value="mixture">Mixture</option>
+            </select>
+            <label class="poplabel">File:</label>
+            <input class="popinput" id="fileInp" type="file" name="fileID" accept="image/jpg, image/png, image/gif" required="required"/>
+            <label class="poplabel">Description:</label>
+            <input class="popinput" type="text" placeholder="Enter Description" name="description" maxlength="20" required="required"/>
+            <button class="popbutton" id="uploadbut" type="submit">Upload</button>
+        </form>
+    </div>
+   <div>
+        <div id="photoviewer" > 
+            <button type="button" class="close" id="pclose">X</button> 
+            <div id="photoContainer">
+                <img  src="" id="photoLarge" alt="default"></img>
+	        </div>
+            <button id="prev" type="button">&lt;</button>
+            <button id="next" type="button">&gt;</button>  
+            <div id="description"></div>
+        </div>
+    </div>
+    <div class="mainGallery">
+        <h1 id="topicname"> <%=title%></h1>
+        <% for(var i=0; i < images.length; i++){ %>
+            <div class="responsivegal">
+                <div class="gallery">
+                    <div class="images">
+                        <img src='<%= images[i] %>' alt='<%= description[i] %>' width="300" height="200"/>
+                        <div class="desc"><%= description[i] %></div>
+                    </div>
+                    <% if(home){ %>
+                        <div class="remove" name="<%= imID[i]%>"><strong>Delete</strong></div>
+                    <% } %>
+                </div>
+            </div>
+        <% } %>
+        <% if(more){ %>
+            <div class = "more"> Show more </div>
+        <% } %>
+		<div class="clearfix"></div>
+    </div>
+</body>
+</html>

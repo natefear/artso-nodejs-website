@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ARTSO - The Image Catalogue</title>
+    <link rel="styleSheet" type="text/css" href="style.css"/>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="topPanel" id="tNav">
+        <div id="container">
+            <ul>
+  	            <li id="logo">
+                    <img src="svglogo.png" id="pageName"/>
+                </li>
+                <li id="search" >
+                    <div id="searchWrap">
+                        <form action="" method="get">
+                            <input id="searchField" type="search" name="topicsearch" placeholder="Topic Search"/>
+                            <input id="searchButton" type="submit" value=""/>
+                        </form>
+                    </div>
+                </li>
+                <li class="drop">
+                    <a href="#" id="topic" class="dropbtn">Topics</a>
+                    <div class="drop-content">
+                        <a href="?topicsearch=All">All</a>
+                        <a href="?topicsearch=Downloaded">Downloaded</a>
+                        <a href="?topicsearch=SVG">SVG</a>
+                        <a href="?topicsearch=PNG">PNG</a>
+                        <a href="?topicsearch=Mixture">Mixture</a>
+                    </div>
+                </li>
+                <li>
+                    <a id="signup" href="#signup" >Sign Up</a>
+                </li>
+                <li>
+                    <a id="login" href="#login" >Login</a>
+                </li>
+                <li id="menu">
+                    <a href="#" class="icon">&#9776;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="loginform" class="popup">
+        <button class="close" type="button">X</button>
+        <form action="" method="post">
+	    <h2 class="popuptitle">Login</h2>
+            <label class="poplabel" >Email:</label>
+            <input class="popinput" type="email" placeholder="Enter Email" name="lusername" required="required"/>
+            <label class="poplabel" >Password:</label>
+            <input class="popinput" type="password" placeholder="Enter Password" name="lpassword" required="required"/>
+            <button class="popbutton" type="submit">Login</button>
+        </form>
+    </div>
+
+    <div id="signupform" class="popup">
+     <button class="close" type="button">X</button>
+        <form id="signform" action="" method="post">
+	    <h2 class="popuptitle">Sign Up</h2>
+            <label class="poplabel">Email:</label>
+            <input class="popinput" type="email" placeholder="Enter Email" name="susername" required="required"/>
+            <label class="poplabel">Password:</label>
+            <input id="password1" class="popinput" type="password" pattern=".{6,}" title="6 characters minimum" placeholder="Enter Password" name="spassword" required="required"/>
+            <label class="poplabel">Re-Enter Password:</label>
+            <input id="password2" class="popinput" type="password" pattern=".{6,}" title="6 characters minimum" placeholder="Re-Enter Password" name="rspassword" required="required"/>
+            <button class="popbutton" id="signupbut" type="submit">Sign Up</button>
+        </form>
+    </div>
+    <div id="photoviewer" > 
+        <button type="button" class="close" id="pclose">X</button>
+        <div id="photoContainer">
+            <img  src="" id="photoLarge" alt="default"></img>
+	    </div>
+        <button id="prev" type="button">&lt;</button>
+        <button id="next" type="button">&gt;</button>  
+        <div id="description"></div>    
+    </div>
+    <div class="mainGallery">
+        <h1 id="topicname"> <%=title%></h1>
+        <% for(var i=0; i < images.length; i++){ %>
+            <div class="responsivegal">
+                <div class="gallery">
+                    <div class="images">
+                        <img src='<%= images[i] %>' alt='<%= description[i] %>' width="300" height="200"/>
+                        <div class="desc"><%= description[i] %></div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+        <% if(more){ %>
+            <div class = "more"> Show more </div>
+        <% } %>
+		<div class="clearfix"></div>
+    </div>
+</body>
+</html>

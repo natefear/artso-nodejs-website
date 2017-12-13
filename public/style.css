@@ -1,0 +1,438 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,.07);
+}
+
+#searchWrap {
+    height:32px;
+    width:100%;
+    min-width:270px;
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.3), 2px 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+#pageName{
+    width: 95px;
+    /*margin: 5px 0 0 40%;*/
+}
+
+#homeLink{
+    padding-top: 0px;
+    padding-right: 0px;
+    margin-left: -16px;
+}
+
+#logo {
+    height:20px;     
+    padding: 14px 16px;"
+}
+
+h1#topicname {
+    font-family: "Arial", Gadget, sans-serif;
+    text-align: center;	
+    margin-bottom: 25px;
+}
+
+#searchField{
+    width:85%;
+    text-align: center;
+    height: 32px;
+    padding: 0 0 0 0;
+    font-size: 15px;
+    margin-right: 0;
+    color: rgb(255,0,0);
+    float: left;
+    border-radius: 3px 0px 0px 3px;
+    outline:none;
+    box-sizing: border-box;
+    transition: all 0.15s;
+    background-color: rgb(255,255,255);
+    border: 0 none;
+    color: rgb(0,0,0);
+}
+
+#searchButton {
+    border: 0 none;
+    border-left: 1px  #8c8c8c solid;
+    background: white url(search.png) center no-repeat;
+    background-size: 18px 18px;
+    width: 40px;
+    float: right;
+    padding: 0;
+    text-align: center;
+    height: 32px;
+    cursor: pointer;  
+}
+
+div.mainGallery {
+    height: 100%;
+    width:100%;
+    overflow: hidden;
+    font-family: "Arial", Gadget, sans-serif;
+    font-size:12px;
+}
+
+div.gallery {
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-bottom: 25px;
+}
+
+div.gallery:hover {
+    box-shadow: 0 0 2px 1px rgba(0,0,150,0.5)
+}
+
+div.gallery img {
+    width: 90%;
+    height: 180px;
+    margin: auto;
+    margin-left: 5%;
+    margin-top: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+div.desc {
+    padding: 10px;
+    text-align: center;
+    z-index: -1;
+}
+
+div.remove {
+    padding: 5px;
+    margin-top:0px;
+    background-color:red;
+    box-shadow: 2px 2px 2px 1px #888888;
+    width: 36px;
+    position: absolute;
+    border-radius: 0px;
+    opacity: 1;
+}
+
+div.remove:hover{
+    opacity: 1;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px 1px rgba(0,0,150,0.5);
+
+}
+
+.responsivegal {
+    width:25%;
+    float: left;
+}
+
+@media only screen and (max-width: 1200px){
+    .responsivegal {
+        width: 33%;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .responsivegal {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .responsivegal {
+        width: 100%;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.popup {
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 200px; /* Need a specific value to work */
+    background: rgba(255,255,255,1);
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+    padding: 40px;
+    max-width: 600px;
+    margin-top: 5%;
+    height: 185px;
+
+}
+
+#loginform, #signupform, #uploadform {
+    display: none;	
+}
+
+.close {
+    float:right;
+    border: none; 
+    position: absolute; 
+    left: 240px; 
+    top: 18px;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+.close:hover {
+    color:black;
+}
+
+.popbutton {
+    width: 200px; 
+    height: 40px; 
+    border: none;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+    margin-top: 10px;
+}
+
+.popbutton:hover {
+    color:black;
+}
+
+.poplabel {
+    color: #787676;  
+    font-family: 'Arial',Gadget,sans-serif;"
+}
+
+.popinput {
+    width: 196px; 
+    margin-bottom: 10px;
+}
+
+.popuptitle {
+    margin:10px;
+    color: black;
+    font-family: "Arial", Gadget, sans-serif; 
+    text-align:center;
+}
+
+#signupform {
+   height:235px;
+}
+
+#uploadform {
+   height:240px;
+   z-index: 1;
+}
+
+#photoContainer {
+    top: 5% !important;
+}
+
+#photoContainer, #photoviewer {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 70%;
+    z-index: 1;
+}
+
+#photoLarge {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height:100%;
+    margin-top:2%;
+}
+
+#pclose {
+    right: 1% !important;
+    left:auto !important;
+}
+
+#photoviewer {
+    padding-top: 36.25%; /* 16:9 Aspect Ratio */
+    display:none;
+    background: rgba(0,0,0,0.9);
+    box-shadow: 0 0 2px 1px rgba(0,0,0,0.5)
+}
+
+.topPanel {
+    background: rgb(255,255,255);
+    overflow: visible;
+    height:48px;
+}
+
+.topPanel li {
+    float: left;
+    text-decoration: none;
+    list-style: none;
+    margin: none;
+    padding:
+}
+
+.topPanel a  {
+    color: #787676;
+    font-family: "Arial", Gadget, sans-serif;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topPanel a:hover {
+    color: black;
+}
+
+.topPanel .icon {
+    display: none;
+    font-size:15px;
+}
+
+.drop {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    float: none;
+    color: #787676;
+    font-family: "Arial", Gadget, sans-serif;
+    padding: 14px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.drop-content {
+    left:50%;
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+
+.drop-content a {
+    box-shadow: 4px 4px 5px 1px rgba(0,0,0,0.4);
+    min-width:200px;
+    background: white;
+    color: #787676;
+    font-family: "Arial", Gadget, sans-serif;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    left:-50%; 
+    position: relative;
+}
+
+.drop:hover .drop-content {
+    display: block;
+    color: #787676;
+}
+
+#container {
+    width:820px;
+    margin: auto;
+}
+
+#search {
+    width: 50%; 
+    padding: 7px 16px;
+}
+
+@media screen and (max-width: 815px) {
+    .topPanel li:not(:first-child) {display: none;}
+    .topPanel li a.icon {
+        float: right;
+        display: block;
+    }
+    .topPanel #menu {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 815px) {
+    .topPanel.responsive {position: relative; height:235px;}
+    .topPanel.responsive li a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topPanel.responsive li, .topPanel.responsive a{
+        float: none;
+        display: block;
+        text-align: center;
+    } 
+    #searchWrap {
+        width: 80%;
+        margin: auto;
+    }
+    #searchField,.drop-content a {
+        width:85%;
+    }
+    #container { width: auto !important;}
+    #search {width:100% !important; padding: 7px 0px !important;}
+    .drop-content a {
+        width:815px;
+        background-color: #D3D3D3;
+    }
+}
+
+div .stretchy-wrapper {
+    width: 80%;
+    padding-bottom: 56.25%; /* 16:9 */
+    position: relative;
+    background: blue;
+}
+div.stretchy-wrapper > div {
+   position: absolute;
+   top: 0; bottom: 0; left: 0; right: 0;
+   color: white;
+   font-size: 24px;
+   text-align: center;
+}
+#description {
+   margin-top:13px;
+   margin-bottom:15px;
+   display:none;
+   color: white;
+   font-family: "Arial", Gadget, sans-serif;
+   text-align: center;
+   color: #d9d9d9;
+}
+
+#prev:hover,#next:hover {
+   color:#a6a6a6;
+}
+
+#next {
+   position:absolute;
+   top: 43%;
+   right: 1%;
+   font-size: 60px;
+   background: none;
+   border: none;
+   color: #d9d9d9;
+}
+
+#prev {
+   position:absolute;
+   top: 43%;
+   left: 1%;
+   font-size: 60px;
+   background: none;
+   border: none;
+   color: #e6e6e6;
+}
+
+.more {
+    background-color: #000;
+    clear: both;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    margin-top: 6px;
+    margin-left: 40%;
+    padding: 6px 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 20%;
+}
