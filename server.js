@@ -67,9 +67,9 @@ function handle(request, response) {
         url = "/";
     }
     if(url.startsWith("/home")){
-        console.log("length:");
-        console.log(request.headers.cookie.length);
-        if(typeof request.headers.cookie == "undefined" || request.headers.cookie.length != 20){
+        //console.log("length:");
+        //console.log(request.headers.cookie.length);
+        if(typeof request.headers.cookie == "undefined" || request.headers.cookie.length < 20 ){
             url = "/";
             console.log("not logged user");
             response.writeHead(Redirect,{Location: "/"});
@@ -447,7 +447,7 @@ function compare(err,rows,request,response,result) {
         var typeHeader;
         if(password == hashedInput){
             console.log('user logged in');
-                //console.log(id);
+            console.log(id);
             var cook = "mycookie=" + randomstring.generate(5) +id+ randomstring.generate(5);
             typeHeader = {
                     'Set-Cookie': cook,
