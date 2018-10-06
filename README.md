@@ -4,7 +4,7 @@ A website and server created as part of a unit in web technologies in order to s
 
 To use:
 - Install Node.js
-- Then NPM install the follwowing modules: sqllite3, formidable, ejs, utf8 and randomstring
+- Then NPM install the following modules: sqllite3, formidable, ejs, utf8 and randomstring
 - Run the createDatabase.js file with the node command
 - Run the server.js file with the node command
 - Then access localhost:8080 via a web browser 
